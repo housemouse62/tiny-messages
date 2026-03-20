@@ -1,0 +1,24 @@
+{
+  "name": "tiny-messages",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/housemouse62/tiny-messages#readme",
+  "bugs": {
+    "url": "https://github.com/housemouse62/tiny-messages/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/housemouse62/tiny-messages.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1"
+  }
+}
