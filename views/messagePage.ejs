@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Message</title>
+  </head>
+  <body>
+    <h1><%= message.user %></h1>
+    <ul>
+      <li>
+        <strong><%= message.user %></strong>
+        <%= message.text %>
+        <em>(<%= message.added %>)</em>
+      </li>
+    </ul>
+    <footer>
+      <a href="/new">Post</a>
+      <a href="/">Home</a>
+    </footer>
+  </body>
+</html>

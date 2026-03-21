@@ -33,4 +33,10 @@ indexRouter.post("/new", (req, res) => {
   res.redirect("/");
 });
 
+indexRouter.get("/messagePage/:index", (req, res) => {
+  const index = Number(req.params.index);
+  const message = messages[index];
+  res.render("messagePage", { message: message });
+});
+
 export default indexRouter;

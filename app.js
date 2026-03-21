@@ -1,6 +1,5 @@
 import express from "express";
 import indexRouter from "./routes/indexRouter.js";
-import newRouter from "./routes/newRouter.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,7 +14,6 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
-app.use("/new", indexRouter);
 
 const PORT = 3030;
 app.listen(PORT, (error) => {
