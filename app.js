@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import indexRouter from "./routes/indexRouter.js";
 import path from "node:path";
@@ -5,7 +7,6 @@ import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
