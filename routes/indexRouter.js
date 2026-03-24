@@ -2,24 +2,6 @@ import { Router } from "express";
 import { createMessageGet } from "../controllers/messageController.js";
 const indexRouter = Router();
 
-const messages = [
-  {
-    message: "Hello dear friend. I hope this message finds you excellent.",
-    name: "Josephine",
-    // added: new Date(),
-  },
-  {
-    message: "Hello World!",
-    name: "Good Old Average AI (single and interested)",
-    // added: new Date(),
-  },
-  {
-    message: "Goodnight World",
-    name: "AI hunter",
-    // added: new Date()
-  },
-];
-
 indexRouter.get("/", createMessageGet);
 
 // indexRouter.get("/new", (req, res) => {
