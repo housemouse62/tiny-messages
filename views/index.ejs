@@ -5,13 +5,13 @@
     <body>
         <h1><%= title %></h1>
         <ul>
-            <% messages.forEach((message, index) => { %>
+            <% messages.forEach((message) => { %>
                 <%- include('message', {message: message}); %>
-                <a href="<%= `/messagePage/${index}`%>">Open</a>
+                <a href="<%= `/messagePage/${message.id}`%>">Open</a>
             <% }); %>
         </ul>
         <footer>
-            <!-- <a href="/new">Post</a> -->
+            <a href="/new">Post</a>
         </footer>
     </body>
 </html>

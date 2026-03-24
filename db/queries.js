@@ -12,4 +12,11 @@ async function addMessage(name, message) {
   ]);
 }
 
-export default { getAllMessages, addMessage };
+async function showMessage(id) {
+  const { rows } = await pool.query("SELECT * FROM messages WHERE id = $1", [
+    id,
+  ]);
+  return rows[0];
+}
+
+export default { getAllMessages, addMessage, showMessage };
