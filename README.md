@@ -2,6 +2,8 @@
 
 A minimal message board built with Node.js, Express, EJS, and PostgreSQL.
 
+![Tiny Messages screenshot](public/Tiny%20Messageboard%20Screen.png)
+
 ## Features
 
 - Post short messages with your name
