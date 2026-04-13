@@ -1,5 +1,6 @@
 import { body, matchedData, validationResult } from "express-validator";
 import db from "../db/queries.js";
+
 const nameLengthErr = "must be between 1 and 10 characters.";
 const messageLengthErr = "must be between 1 and 255 characters.";
 
@@ -14,10 +15,20 @@ const validateUser = [
     .withMessage(`Message ${messageLengthErr}`),
 ];
 
+function formatDate(date) {
+  return new Date(date).toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
 async function createMessageGet(req, res) {
   const messages = await db.getAllMessages();
-  console.log(messages);
-  res.render("index", { title: "Tiny Messageboard", messages: messages });
+  const formatted = messages.map((m) => ({ ...m, added: formatDate(m.added) }));
+  res.render("index", { title: "Tiny Message Board", messages: formatted });
 }
 
 async function createMessageFormGet(req, res) {
@@ -41,9 +52,8 @@ export const createMessageFormPost = [
 
 async function showMessageGet(req, res) {
   const id = req.params.id;
-  const results = await db.showMessage(id);
-  console.log(results);
-  res.render("messagePage", { message: results });
+  const result = await db.showMessage(id);
+  res.render("messagePage", { message: { ...result, added: formatDate(result.added) } });
 }
 
 export { createMessageGet, createMessageFormGet, showMessageGet };

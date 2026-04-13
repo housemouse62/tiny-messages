@@ -1,17 +1,27 @@
 <html>
   <head>
-    <title><% title %></title>
+    <title>New Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h2><% title %></h2>
-    <%- include("../partials/errors.ejs") %>
-    <form method="POST" action="/new">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" />
-      <label for="message">Message</label>
-      <input type="text" id="message" name="message" />
-      <button>Submit</button>
-    </form>
-    <a href="/">Home</a>
+    <div class="container">
+      <h2>New Message</h2>
+      <%- include("../partials/errors.ejs") %>
+      <form class="form-card" method="POST" action="/new">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" maxlength="10" />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message" placeholder="What's on your mind?" maxlength="255" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <footer>
+        <a class="nav-link" href="/">Home</a>
+      </footer>
+    </div>
   </body>
 </html>

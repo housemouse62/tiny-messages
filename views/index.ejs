@@ -1,17 +1,25 @@
 <html>
-    <head>
-        <title><%= title %></title>
-    </head>
-    <body>
-        <h1><%= title %></h1>
-        <ul>
-            <% messages.forEach((message) => { %>
-                <%- include('message', {message: message}); %>
-                <a href="<%= `/messagePage/${message.id}`%>">Open</a>
-            <% }); %>
-        </ul>
-        <footer>
-            <a href="/new">Post</a>
-        </footer>
-    </body>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <ul class="message-list">
+        <% messages.forEach((message) => { %>
+          <li class="message-card">
+            <span class="author"><%= message.name %></span>
+            <span class="body"><%= message.message %></span>
+            <span class="meta"><%= message.added %></span>
+            <a class="open-link" href="<%= `/messagePage/${message.id}` %>">Open &rarr;</a>
+          </li>
+        <% }); %>
+      </ul>
+      <footer>
+        <a class="nav-link" href="/new">Post a message</a>
+      </footer>
+    </div>
+  </body>
 </html>

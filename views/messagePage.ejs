@@ -1,19 +1,20 @@
 <html>
   <head>
-    <title>Message</title>
+    <title><%= message.name %>'s message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1><%= message.name %></h1>
-    <ul>
-      <li>
-        <strong><%= message.name %></strong>
-        <%= message.message %>
-        <em>(<%= message.added %>)</em>
-      </li>
-    </ul>
-    <footer>
-      <!-- <a href="/new">Post</a> -->
-      <a href="/">Home</a>
-    </footer>
+    <div class="container">
+      <div class="message-detail">
+        <p class="author"><%= message.name %></p>
+        <p class="body"><%= message.message %></p>
+        <p class="meta"><%= message.added %></p>
+      </div>
+      <footer>
+        <a class="nav-link" href="/new">Post a message</a>
+        <a class="nav-link" href="/">Home</a>
+      </footer>
+    </div>
   </body>
 </html>

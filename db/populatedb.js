@@ -18,7 +18,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: process.env.DB_CONNECTION,
+    connectionString: process.argv[2],
   });
   await client.connect();
   await client.query(SQL);
